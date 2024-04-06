@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const recipeRoute = require('./routes/recipe');
 
+const app = express();
 
 const path = require("path");
 app.use(express.static(path.join(__dirname, "build")));
@@ -12,7 +13,6 @@ mongoose.connect('mongodb+srv://kriskus:FjKTUOKcU0bvVqKh@cluster2.sjjf7xd.mongod
 .then(() => console.log('Connexion à MongoDB réussie !'))
 .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-const app = express();
 
 app.use(express.json())
 
